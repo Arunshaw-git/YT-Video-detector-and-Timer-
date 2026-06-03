@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "version": "1.0",
   "name": "Educational Video Detector",
-  "permissions": ["activeTab", "scripting", "tabs", "notifications"],
+  "permissions": ["activeTab", "scripting", "tabs", "notifications", "storage"],
 
   "background": {
     "service_worker": "background.js"

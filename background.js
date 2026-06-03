@@ -23,3 +23,19 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   // Return true to indicate that the response will be sent asynchronously
   return true;
 });
+
+// Open the extension popup when the user clicks the notification
+chrome.notifications.onClicked.addListener(() => {
+  chrome.windows.getCurrent({ populate: true }, (window) => {
+    chrome.windows.update(window.id, { focused: true }, () => {
+      if (chrome.action && typeof chrome.action.openPopup === 'function') {
+        chrome.action.openPopup().catch((err) => {
+          console.error("Error opening popup:", err);
+        });
+      } else {
+        console.log("chrome.action.openPopup is not supported in this Chrome version.");
+      }
+    });
+  });
+});
+

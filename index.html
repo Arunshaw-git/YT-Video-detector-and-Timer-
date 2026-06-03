@@ -3,18 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>YT Study Timer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <svg class="logo-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <h1>YT Study Timer</h1>
+            </div>
+            <span class="status-badge" id="status-badge">Idle</span>
+        </header>
 
-    <div id="stopwatch">00h:00m:00s</div>
-    <button id="start">START</button>
-    <button id="stop">STOP</button>
-    <button id="reset">RESET</button>
-    
-    <ul id="myList"></ul> <!-- Container for the list -->
-    
+        <!-- Timer Card -->
+        <div class="timer-card">
+            <div id="stopwatch">00h:00m:00s</div>
+            
+            <div class="controls">
+                <button id="start" class="btn btn-start">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    START
+                </button>
+                <button id="stop" class="btn btn-stop">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    PAUSE
+                </button>
+                <button id="reset" class="btn btn-reset">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                    SAVE
+                </button>
+            </div>
+        </div>
+
+        <!-- Sessions Section -->
+        <section class="sessions-section">
+            <div class="section-header">
+                <h2>Study Sessions</h2>
+                <span class="count-badge" id="session-count">0</span>
+            </div>
+            
+            <div class="sessions-container">
+                <ul id="myList" class="sessions-list"></ul>
+                <div id="empty-state" class="empty-state">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 8v4l3 3"></path>
+                        <circle cx="12" cy="12" r="9"></circle>
+                    </svg>
+                    <p>No study sessions recorded yet.</p>
+                    <span>Start the timer to log your focus time!</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <script src="stopwatch.js"></script>
 </body>
 </html>
