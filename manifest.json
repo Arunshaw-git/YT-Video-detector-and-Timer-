@@ -1,9 +1,20 @@
 {
   "manifest_version": 3,
   "version": "1.0",
-  "name": "Educational Video Detector",
-  "permissions": ["activeTab", "scripting", "tabs", "notifications", "storage"],
-
+  "name": "YT Study Timer",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "notifications",
+    "storage"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -13,11 +24,18 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*", "https://youtube.com/*"],
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://youtube.com/*"
+      ],
       "all_frames": true,
       "run_at": "document_idle",
-      "js": ["content.js"]
+      "js": [
+        "content.js"
+      ]
     }
   ],
-  "host_permissions": ["https://www.youtube.com/*"]
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ]
 }
