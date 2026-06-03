@@ -24,13 +24,13 @@ function isEducationalVideo() {
     "calculus", "algebra", "statistics", "probability",
     "grammar", "writing", "english", "language", "vocabulary",
     "exam", "test", "preparation", "gre", "sat", "ielts",
-    "certification", "certified", "bootcamp", "masterclass", "what is"
+    "certification", "certified", "bootcamp", "masterclass"
   ];
  
 
   console.log("Video title:", title);
 
-  return educationalKeywords.some((keyword) => title.includes(keyword.toLowerCase()));
+  return keywords.some((keyword) => title.includes(keyword.toLowerCase()));
 }
 
 function checkVideoStatus() {
